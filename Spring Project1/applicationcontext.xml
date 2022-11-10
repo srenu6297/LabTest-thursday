@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+<!-- Books -->
+<bean id="book1" class="com.hibernate.SpringProject1.Book">
+	<constructor-arg name="bid" value="10001"></constructor-arg>
+	<constructor-arg name="bname" value="Data Structure"></constructor-arg>
+	<constructor-arg name="price" value="1200"></constructor-arg>
+</bean>
+
+<bean id="book2" class="com.hibernate.SpringProject1.Book">
+	<constructor-arg name="bid" value="10002"></constructor-arg>
+	<constructor-arg name="bname" value="Compiler Design"></constructor-arg>
+	<constructor-arg name="price" value="1100"></constructor-arg>
+	
+</bean>
+
+<bean id="book3" class="com.hibernate.SpringProject1.Book">
+	<constructor-arg name="bid" value="10003"></constructor-arg>
+	<constructor-arg name="bname" value="Core Java"></constructor-arg>
+	<constructor-arg name="price" value="1250"></constructor-arg>
+	
+</bean>
+
+<bean id="book4" class="com.hibernate.SpringProject1.Book">
+	<constructor-arg name="bid" value="10004"></constructor-arg>
+	<constructor-arg name="bname" value="C++"></constructor-arg>
+	<constructor-arg name="price" value="900"></constructor-arg>
+	
+</bean>
+
+
+	
+	<!-- Address -->
+	<bean id="Address1" class="com.hibernate.SpringProject1.Address">
+		<constructor-arg name="hno" value="4242"></constructor-arg>
+		<constructor-arg name="area" value="Basai"></constructor-arg>
+		<constructor-arg name="city" value="Gurugram"></constructor-arg>
+	</bean>
+	
+	<bean id="Address2" class="com.hibernate.SpringProject1.Address">
+		<constructor-arg name="hno" value="422"></constructor-arg>
+		<constructor-arg name="area" value="Bhawani"></constructor-arg>
+		<constructor-arg name="city" value="Gurugram"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="studentbean1" class="com.hibernate.SpringProject1.Student">
+	
+		<constructor-arg name="sid" value="101"></constructor-arg>
+		<constructor-arg name="sname" value="Renu "></constructor-arg>
+		
+		<constructor-arg name="blist">
+			<list>
+				<ref bean="book1"></ref>
+				<ref bean="book2"></ref>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="address">
+		 <ref bean="Address1"/></constructor-arg>
+	</bean>
+	
+	<bean id="studentbean2" class="com.hibernate.SpringProject1.Student">
+	
+		<constructor-arg name="sid" value="105"></constructor-arg>
+		<constructor-arg name="sname" value="Anju "></constructor-arg>
+		
+		<constructor-arg name="blist">
+			<list>
+				<ref bean="book3"></ref>
+				<ref bean="book4"></ref>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="address">
+		 <ref bean="Address2"/></constructor-arg>
+	</bean>
+	
+	
+</beans>
+
